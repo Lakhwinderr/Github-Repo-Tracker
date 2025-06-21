@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Github Repos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: 2fr repeat(3, 1fr);
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .child {
+        background-color: #e0e3e7;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        height: fit-content;
+      }
+      .repo{
+        height: fit-content;
+      }
+      .repoNameAndDescription {
+       background-color: #eef0f3;
+         padding: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+        border-radius: 5px;
+        height: 100%;
+        cursor: pointer;
+      }
+      .repo>*:not(:first-child) {
+        background-color: #eef0f3;
+         padding: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        height: 100%;
+      }
+      .header {
+        font-weight: bold;
+      }
+      
+       a, a:hover, a:focus, a:active {
+      text-decoration: none;
+      color: inherit;
+ }
+    </style>
+  </head>
+
+  <body class="p-3">
+    <h1>Github Repos</h1>
+    <div class="grid">
+      <div class="child">
+        <div class="header">Repository 🗃️</div>
+      </div>
+      <div class="child">
+        <div class="header">isYours❓</div>
+      </div>
+      <div class="child">
+        <div class="header">hasCleanCode❓</div>
+      </div>
+      <div class="child">
+        <div class="header">hasUpdatedMd❓</div>
+      </div>
+    </div>
+    <div class="grid repo">
+      <a class="repoNameAndDescription" href="https://github.com/Lakhwinderr" target="_blank">
+        <div class="repoName fw-semibold">Lakhwinder</div>
+        <div class="repoDescription">Lakhwinder is an awesome developer.</div>
+      </a>
+      <div class="isYours">
+        ✅
+      </div>
+      <div class="hasCleanCode">
+         ❌
+      </div>
+      <div class="hasUpdatedMd">
+         ✅
+      </div>
+    </div>
+    <div class="grid repo">
+      <a class="repoNameAndDescription" href="https://github.com/Lakhwinderr" target="_blank">
+        <div class="repoName fw-semibold">Lakhwinder</div>
+        <div class="repoDescription">Lakhwinder is an awesome developer.</div>
+      </a>
+      <div class="isYours">
+        ✅
+      </div>
+      <div class="hasCleanCode">
+         ❌
+      </div>
+      <div class="hasUpdatedMd">
+         ✅
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+    <script type="module" src="./script.js"></script>
+  </body>
+</html>
