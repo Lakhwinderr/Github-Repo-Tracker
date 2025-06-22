@@ -14,7 +14,12 @@
       body {
         background-color: #f8f9fa;
       }
-
+      header {
+        position: sticky;
+        top: 0;
+         background-color: #f8f9fa;
+        padding: 5px 0;
+      }
       .grid {
         display: grid;
         grid-template-columns: 2fr repeat(3, 1fr);
@@ -50,6 +55,7 @@
         justify-content: center;
         border-radius: 5px;
         height: 100%;
+        cursor: pointer;
       }
       .header {
         font-weight: bold;
@@ -63,7 +69,8 @@
   </head>
 
   <body class="p-3">
-    <h1>Github Repos</h1>
+    <header>
+      <h1>Github Repos</h1>
     <div class="grid">
       <div class="child">
         <div class="header">Repository 🗃️</div>
@@ -78,21 +85,9 @@
         <div class="header">hasUpdatedMd❓</div>
       </div>
     </div>
-    <div class="grid repo">
-      <a class="repoNameAndDescription" href="https://github.com/Lakhwinderr" target="_blank">
-        <div class="repoName fw-semibold">Lakhwinder</div>
-        <div class="repoDescription">Lakhwinder is an awesome developer.</div>
-      </a>
-      <div class="isYours">
-        ✅
-      </div>
-      <div class="hasCleanCode">
-         ❌
-      </div>
-      <div class="hasUpdatedMd">
-         ✅
-      </div>
-    </div>
+    </header>
+    
+    
     <div class="grid repo">
       <a class="repoNameAndDescription" href="https://github.com/Lakhwinderr" target="_blank">
         <div class="repoName fw-semibold">Lakhwinder</div>
