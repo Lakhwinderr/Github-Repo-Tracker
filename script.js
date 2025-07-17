@@ -7,7 +7,7 @@ create function to modify the data -> true false variables
 
 //get the data and save it in local storage -> this time in chrome
 import { getData } from './getAndModifyData.js';
-
+import { filterData } from './filterData.js';
 const data = await getData(); // in top-level await (e.g. modern browser or in async function)
 
 //let us save this data to local storage
@@ -87,4 +87,41 @@ function toggleHasUpdatedMd(id) {
   document.getElementById(id).querySelector('.hasUpdatedMd').textContent = newData[id]["hasUpdatedMd"] ? "✅" : "❌";
 }
 
+//select the div with id 'filters'
+const filtersDiv = document.getElementById('filters');
+
+//if the child nodes are clicked, call the filterAndDisplayData function
+filtersDiv.addEventListener('click', (event) => {
+  if (event.target.tagName === 'INPUT' && event.target.type === 'checkbox') {
+    filterAndDisplayData();
+  }
+});
+
+//function to filter the data
+function filterAndDisplayData() {
+  const isYours = document.getElementById('isYours').checked;
+  const hasCleanCode = document.getElementById('hasCleanCode').checked;
+  const hasUpdatedMd = document.getElementById('hasUpdatedMd').checked;
+
+  const filteredData = filterData(isYours, hasCleanCode, hasUpdatedMd, JSON.parse(localStorage.getItem('ourData')));
+  
+  // Clear the existing DOM elements
+  document.querySelectorAll('.repo').forEach(div => div.remove());
+  
+  // Append the filtered data to the DOM
+  appendToDOM(filteredData);
+} 
+
+
+  document.querySelectorAll('#filters input[type="checkbox"]').forEach(input => {
+    const label = document.querySelector(`label[for="${input.id}"]`);
+    
+    input.addEventListener('change', () => {
+      if (input.checked) {
+        label.classList.add('checked');
+      } else {
+        label.classList.remove('checked');
+      }
+    });
+  });
 

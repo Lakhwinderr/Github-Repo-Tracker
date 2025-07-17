@@ -20,6 +20,21 @@
          background-color: #f8f9fa;
         padding: 5px 0;
       }
+      #nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+      }
+      #nav label{
+        cursor: pointer;
+        margin-left: 20px;
+      }
+       #filters label:hover,
+#filters label.checked {
+  text-decoration: underline;
+}
+
       .grid {
         display: grid;
         grid-template-columns: 2fr repeat(3, 1fr);
@@ -70,7 +85,18 @@
 
   <body class="p-3">
     <header>
-      <h1>Github Repos</h1>
+      <div id="nav">
+        <h1 style="display: inline;">Github Repos</h1>
+      <div id="filters" style="display: inline;">
+        <label  for="isYours">isYours❓</label>
+        <input  id = "isYours" type="checkbox">
+        <label for="hasCleanCode">hasCleanCode❓</label>
+        <input id = "hasCleanCode" type="checkbox">
+        <label for="hasUpdatedMd">hasUpdatedMd❓</label>
+        <input id = "hasUpdatedMd" type="checkbox">
+      </div>
+      </div>
+      
     <div class="grid">
       <div class="child">
         <div class="header">Repository 🗃️</div>
