@@ -27,10 +27,10 @@ function clearAndSaveData(newData) {
 //function to append the object to the DOM
 function appendToDOM(data) {
   const body = document.querySelector('body');
-  data.forEach((obj, id) => {
+  data.forEach((obj) => {
     const div = document.createElement('div');
     div.className = 'grid repo';
-    div.id = id; // setting the key for each div
+    div.id = obj.id; // setting the key for each div
     div.innerHTML = `
       <a class="repoNameAndDescription" href=${obj["Clone URL"]} target="_blank">
         <div class="repoName fw-semibold">${obj["Name"]}</div>
@@ -48,9 +48,9 @@ function appendToDOM(data) {
     `;
 
      body.appendChild(div);
-    div.querySelector('.isYours').addEventListener('click', () => toggleIsYours(id));
-    div.querySelector('.hasCleanCode').addEventListener('click', () => toggleHasCleanCode(id));
-    div.querySelector('.hasUpdatedMd').addEventListener('click', () => toggleHasUpdatedMd(id));
+    div.querySelector('.isYours').addEventListener('click', () => toggleIsYours(obj.id));
+    div.querySelector('.hasCleanCode').addEventListener('click', () => toggleHasCleanCode(obj.id));
+    div.querySelector('.hasUpdatedMd').addEventListener('click', () => toggleHasUpdatedMd(obj.id));
 
 
    
@@ -73,6 +73,7 @@ function toggleIsYours(id) {
 }
 //function to toggle hasCleanCode property
 function toggleHasCleanCode(id) {
+  console.log('Toggling hasCleanCode for id:', id);
   const newData = JSON.parse(localStorage.getItem('ourData'));
   newData[id]["hasCleanCode"] = !newData[id]["hasCleanCode"];
   clearAndSaveData(newData);
